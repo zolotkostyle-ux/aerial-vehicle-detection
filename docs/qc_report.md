@@ -37,7 +37,7 @@ These are the labeller's boxes, not vehicles: some are not vehicles, and vehicle
 
 ## 2. Review results
 
-Completed on 22 November 2026 across 8 rounds (one clip per round, `trainA`–`trainF` first, `eval` and `eval_far` last) under frozen `docs/annotation_spec.md` v1.0. No rule changed between rounds.
+Completed on 22 November 2026 across 8 rounds (one clip per round, `trainA`–`trainF` first, `eval` and `eval_far` last) starting from `docs/annotation_spec.md` v1.0. Two rules were clarified during the review and recorded as spec v1.1 (spec, section 9): `truncated` also covers vehicles cut by an obstacle, and a tractor without a trailer is `car`. trainC and trainD were re-checked after their rounds, and every `large` box after round 8.
 
 | File | What it holds | SHA-256, first 16 characters |
 |---|---|---|
@@ -96,6 +96,16 @@ Evaluated on non-truncated boxes outside `ignore` zones (`2,668` reviewed vehicl
 | **All 69 frames · total** | **2,668** | **1,793** | **875** | **393** | **0.67** | **0.82** | **3.7%** |
 | Held-out eval (`17` frames) · 0–200 m | 112 | 83 | 29 | 21 | 0.74 | 0.80 | 2.4% |
 | Held-out eval (`17` frames) · 200–400 m | 572 | 377 | 195 | 22 | 0.66 | 0.94 | 7.2% |
+
+### 2.3b mAP@0.5 of the frozen auto-labeller
+
+COCO-style 101-point AP at IoU 0.5, single class, scored by the labeller's confidence (`scripts/map_eval.py`). Truncated ground truth and predictions inside `ignore` zones are left out; an unmatched prediction counts against a band only if its own box falls in that band. The reviewed boxes started from these predictions, so this is an upper bound for the labeller.
+
+| Range | Held-out eval (17 frames): GT | AP@0.5 | Train (52 frames): GT | AP@0.5 |
+|---|---|---|---|---|
+| 0–200 m | 112 | 0.694 | 448 | 0.669 |
+| 200–400 m | 572 | 0.643 | 1,261 | 0.612 |
+| Both bands | 684 | 0.647 | 1,709 | 0.626 |
 
 ### 2.4 Review timing and what drove the cost
 

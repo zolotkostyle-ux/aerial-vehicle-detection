@@ -1,6 +1,6 @@
 # Annotation spec: aerial vehicle detection
 
-Version 1.0, frozen on 20 November 2026. Applies to every frame that goes through review. It changes only through the change log in section 9.
+Version 1.1. Version 1.0 was frozen on 20 November 2026, before review; the two clarifications made since are listed in the change log in section 9. Applies to every frame that goes through review.
 
 The detector answers one question: is there a vehicle here, and how far away is it. Every rule below follows from that. When a case is not covered, do not guess: put a small `ignore` box on the object, add the case to the questions list, and carry on. Questions are decided between review rounds, not during one.
 
@@ -37,7 +37,7 @@ Each box carries two attributes, `size_class` and `truncated`.
 | `car` | up to about 6 m: car, SUV, van, pickup | 4.5 m |
 | `large` | longer than about 6 m: truck, bus, coach | 12 m |
 
-Pickups, vans and work trucks built on a pickup stay `car`. In oblique footage near vehicles look bigger than far ones, so decide by the type of vehicle (separate cab and body, semi-trailer, bus), not by pixels.
+A tractor unit without a trailer (bobtail, about 7 m) is `car`. Its distance then reads about 36% too near; with the 12 m `large` reference, which assumes a full rig, it would read about 71% too far. Pickups, vans and work trucks built on a pickup stay `car`. In oblique footage near vehicles look bigger than far ones, so decide by the type of vehicle (separate cab and body, semi-trailer, bus), not by pixels.
 
 `truncated` is `yes` when the frame edge or an obstacle (bridge, tree, building, another vehicle) cuts off part of the vehicle so its full length is not in view, while the visible part is at least 8 px on its long side and clearly identifiable as a vehicle from that frame alone. Such a box is a normal positive for detection (preserving early capture as a vehicle enters the frame or emerges from cover), and it is left out of the distance bands because its pixel length is shorter than the vehicle. Every box whose full length is visible is `no`.
 
@@ -156,3 +156,4 @@ The review runs in rounds, one clip per round: the six train clips first, the tw
 | Version | Date | Change | Frames re-checked |
 |---|---|---|---|
 | 1.0 | 20 Nov 2026 | First frozen version | none |
+| 1.1 | 22 Nov 2026 | `truncated` also covers a vehicle cut by a bridge, tree, building or another vehicle, not only by the frame edge. A tractor unit without a trailer is `car`. Both came up as questions during the review rounds; the round in which each was first applied was not recorded. | trainC and trainD after their rounds (`docs/review_log.csv`); every `large` box in all 8 clips after round 8 |
