@@ -1,9 +1,9 @@
 round,clip,frames,starting_boxes,date,active_min,pause_min,spec_version,questions,notes
-1,trainA,8,231,,,,1.0,,
-2,trainB,12,168,,,,1.0,,
-3,trainC,6,136,,,,1.0,,
-4,trainD,12,391,,,,1.0,,
-5,trainE,8,658,,,,1.0,,
-6,trainF,6,292,,,,1.0,,
-7,eval,9,31,,,,1.0,,
-8,eval_far,8,536,,,,1.0,,
+1,trainA,8,231,2026-11-22,31.78,0,1.0,,0:31:47 stopwatch
+2,trainB,12,168,2026-11-22,27.75,0,1.0,,0:27:45 stopwatch
+3,trainC,6,136,2026-11-22,10.67,0,1.0,,0:10:40 stopwatch (incl. post-round fix)
+4,trainD,12,391,2026-11-22,32.22,0,1.0,,0:32:13 stopwatch (incl. post-round fix)
+5,trainE,8,658,2026-11-22,100.25,0,1.0,,"1:40:15 stopwatch; hard low-sun shadows bloated auto-boxes (326 box fixes)"
+6,trainF,6,292,2026-11-22,11.30,0,1.0,,0:11:18 stopwatch
+7,eval,9,31,2026-11-22,2.18,0,1.0,,0:02:11 stopwatch
+8,eval_far,8,536,2026-11-22,32.62,0,1.0,,0:32:37 stopwatch
