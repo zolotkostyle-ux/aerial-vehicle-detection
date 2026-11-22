@@ -1,0 +1,9 @@
+round,clip,frames,starting_boxes,date,active_min,pause_min,spec_version,questions,notes
+1,trainA,8,231,,,,1.0,,
+2,trainB,12,168,,,,1.0,,
+3,trainC,6,136,,,,1.0,,
+4,trainD,12,391,,,,1.0,,
+5,trainE,8,658,,,,1.0,,
+6,trainF,6,292,,,,1.0,,
+7,eval,9,31,,,,1.0,,
+8,eval_far,8,536,,,,1.0,,

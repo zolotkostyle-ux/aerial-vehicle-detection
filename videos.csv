@@ -1,0 +1,9 @@
+clip,role,scene,pexels_page,file
+trainA,train,highway interchange,https://www.pexels.com/video/8968356/,https://videos.pexels.com/video-files/8968356/8968356-hd_1920_1080_30fps.mp4
+trainB,train,"rural highway, light traffic",https://www.pexels.com/video/5382494/,https://videos.pexels.com/video-files/5382494/5382494-hd_1920_1080_24fps.mp4
+trainC,train,"simple highway",https://www.pexels.com/video/8457857/,https://videos.pexels.com/video-files/8457857/8457857-hd_1920_1080_24fps.mp4
+trainD,train,urban intersection,https://www.pexels.com/video/3405804/,https://videos.pexels.com/video-files/3405804/3405804-hd_1920_1080_30fps.mp4
+eval,eval,"city highway, daytime",https://www.pexels.com/video/32179597/,https://videos.pexels.com/video-files/32179597/13722963_1080_1920_30fps.mp4
+eval_far,eval (added for rule 4),"city highway, top-down, 200-400 m",https://www.pexels.com/video/11504182/,https://videos.pexels.com/video-files/11504182/11504182-hd_1920_1080_60fps.mp4
+trainE,train (added: top-down far range),"top-down multi-level interchange, city",https://www.pexels.com/video/5356780/,https://videos.pexels.com/video-files/5356780/5356780-hd_2048_1080_25fps.mp4
+trainF,train (added: top-down far range),"top-down highway interchange with parking lots, dry terrain",https://www.pexels.com/video/29491666/,https://videos.pexels.com/video-files/29491666/12694437_1920_1080_30fps.mp4

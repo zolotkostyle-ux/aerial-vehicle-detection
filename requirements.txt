@@ -1,0 +1,5 @@
+ultralytics==8.4.215
+opencv-python-headless==5.1.0.95
+torch==2.15.0
+numpy==2.5.5
+cvat-sdk==2.24.0
