@@ -90,6 +90,8 @@ Distance is worked out as the brief describes, from box size, a reference length
 | Time to first detection | not measured | not measured |
 | mAP@0.5 (bonus); 0.65 over both bands | 0.69 | 0.64 |
 
+**Frames with predictions and ground truth** are in `docs/examples/`: each image shows the auto-labeller's boxes on top (cyan) and the reviewed labels below, coloured by band. Two are eval frames, two are training frames where the auto-labels were worst (shadows in `trainE`, roofs and fences in `trainB`). The poor top halves are the point: they show what the review fixed.
+
 The brief's false-alarm formula gives alarms per minute only at one frame per second; these frames are at least 1.5 s apart, so read it as alarms per frame × 60. Time to first detection needs consecutive frames and a detector. The reviewed boxes started from the labeller's own predictions, so the mAP is an upper bound. The labeller's detection rate on training clips is 0.77 and 0.66, close to eval, so the two splits are equally hard.
 
 **What the review taught me.**
